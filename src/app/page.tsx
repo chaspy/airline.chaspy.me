@@ -3,56 +3,56 @@
 import React, { useState, useMemo } from 'react'
 
 const airports = [
-  { id: 'HND', name: '羽田', x: 400, y: 280 },
-  { id: 'NRT', name: '成田', x: 420, y: 270 },
-  { id: 'CTS', name: '新千歳', x: 420, y: 80 },
-  { id: 'FUK', name: '福岡', x: 280, y: 340 },
-  { id: 'KIX', name: '関西', x: 360, y: 320 },
-  { id: 'NGO', name: '中部', x: 380, y: 300 },
-  { id: 'ITM', name: '伊丹', x: 350, y: 310 },
-  { id: 'OKA', name: '那覇', x: 280, y: 420 },
-  { id: 'KOJ', name: '鹿児島', x: 300, y: 380 },
-  { id: 'HIJ', name: '広島', x: 320, y: 330 },
-  { id: 'SDJ', name: '仙台', x: 430, y: 220 },
-  { id: 'KMQ', name: '小松', x: 370, y: 270 },
-  { id: 'AXT', name: '秋田', x: 410, y: 180 },
-  { id: 'AOJ', name: '青森', x: 420, y: 150 },
-  { id: 'KKJ', name: '北九州', x: 290, y: 330 },
-  { id: 'UKB', name: '神戸', x: 355, y: 315 },
-  { id: 'OBO', name: '帯広', x: 440, y: 100 },
-  { id: 'AKJ', name: '旭川', x: 430, y: 60 },
-  { id: 'KMI', name: '宮崎', x: 310, y: 370 },
-  { id: 'KCZ', name: '高知', x: 330, y: 350 },
-  { id: 'TAK', name: '高松', x: 340, y: 330 },
-  { id: 'TKS', name: '徳島', x: 350, y: 340 },
-  { id: 'OIT', name: '大分', x: 300, y: 350 },
-  { id: 'NGS', name: '長崎', x: 270, y: 350 },
-  { id: 'KMJ', name: '熊本', x: 290, y: 360 },
-  { id: 'MMY', name: '宮古', x: 260, y: 440 },
-  { id: 'ISG', name: '石垣', x: 240, y: 460 },
-  { id: 'WAK', name: '稚内', x: 440, y: 50 },
-  { id: 'MBE', name: '紋別', x: 450, y: 80 },
-  { id: 'SHB', name: '中標津', x: 460, y: 100 },
-  { id: 'KUH', name: '釧路', x: 470, y: 120 },
-  { id: 'HKD', name: '函館', x: 480, y: 140 },
-  { id: 'ONJ', name: '大館能代', x: 490, y: 160 },
-  { id: 'SYO', name: '庄内', x: 500, y: 180 },
-  { id: 'TOY', name: '富山', x: 510, y: 200 },
-  { id: 'NTQ', name: '能登', x: 520, y: 220 },
-  { id: 'HAC', name: '八丈島', x: 530, y: 240 },
-  { id: 'OKJ', name: '岡山', x: 540, y: 260 },
-  { id: 'IWK', name: '岩国', x: 550, y: 280 },
-  { id: 'UBJ', name: '山口宇部', x: 560, y: 300 },
-  { id: 'TTJ', name: '鳥取', x: 570, y: 320 },
-  { id: 'YGJ', name: '米子', x: 580, y: 340 },
-  { id: 'IWJ', name: '萩・石見', x: 590, y: 360 },
-  { id: 'TSJ', name: '対馬', x: 600, y: 380 },
-  { id: 'FUJ', name: '福江', x: 610, y: 400 },
-  { id: 'SHM', name: '南紀白浜', x: 620, y: 420 },
-  { id: 'KUM', name: '屋久島', x: 630, y: 440 },
-  { id: 'OIM', name: '大島', x: 640, y: 460 },
-  { id: 'KKX', name: '喜界島', x: 650, y: 480 },
-  { id: 'OES', name: '奥尻', x: 660, y: 500 },
+  { id: 'HND', name: '羽田', lat: 35.5494, lon: 139.7798 },
+  { id: 'NRT', name: '成田', lat: 35.7647, lon: 140.3864 },
+  { id: 'CTS', name: '新千歳', lat: 42.7752, lon: 141.6923 },
+  { id: 'FUK', name: '福岡', lat: 33.5859, lon: 130.4512 },
+  { id: 'KIX', name: '関西', lat: 34.4347, lon: 135.2442 },
+  { id: 'NGO', name: '中部', lat: 34.8584, lon: 136.8054 },
+  { id: 'ITM', name: '伊丹', lat: 34.7855, lon: 135.4382 },
+  { id: 'OKA', name: '那覇', lat: 26.1958, lon: 127.646 },
+  { id: 'KOJ', name: '鹿児島', lat: 31.8034, lon: 130.7194 },
+  { id: 'HIJ', name: '広島', lat: 34.4361, lon: 132.9194 },
+  { id: 'SDJ', name: '仙台', lat: 38.1397, lon: 140.9176 },
+  { id: 'KMQ', name: '小松', lat: 36.3946, lon: 136.4066 },
+  { id: 'AXT', name: '秋田', lat: 39.6156, lon: 140.2183 },
+  { id: 'AOJ', name: '青森', lat: 40.7347, lon: 140.6901 },
+  { id: 'KKJ', name: '北九州', lat: 33.8459, lon: 131.0355 },
+  { id: 'UKB', name: '神戸', lat: 34.6328, lon: 135.2239 },
+  { id: 'OBO', name: '帯広', lat: 42.7339, lon: 143.2169 },
+  { id: 'AKJ', name: '旭川', lat: 43.6708, lon: 142.4475 },
+  { id: 'KMI', name: '宮崎', lat: 31.8772, lon: 131.4494 },
+  { id: 'KCZ', name: '高知', lat: 33.5461, lon: 133.6697 },
+  { id: 'TAK', name: '高松', lat: 34.214, lon: 134.0155 },
+  { id: 'TKS', name: '徳島', lat: 34.1328, lon: 134.6069 },
+  { id: 'OIT', name: '大分', lat: 33.4792, lon: 131.7364 },
+  { id: 'NGS', name: '長崎', lat: 32.9169, lon: 129.9144 },
+  { id: 'KMJ', name: '熊本', lat: 32.8373, lon: 130.855 },
+  { id: 'MMY', name: '宮古', lat: 24.7828, lon: 125.294 },
+  { id: 'ISG', name: '石垣', lat: 24.3964, lon: 124.245 },
+  { id: 'WAK', name: '稚内', lat: 45.4042, lon: 141.8006 },
+  { id: 'MBE', name: '紋別', lat: 44.3048, lon: 143.4043 },
+  { id: 'SHB', name: '中標津', lat: 43.5775, lon: 144.9597 },
+  { id: 'KUH', name: '釧路', lat: 43.041, lon: 144.1934 },
+  { id: 'HKD', name: '函館', lat: 41.77, lon: 140.8227 },
+  { id: 'ONJ', name: '大館能代', lat: 40.1919, lon: 140.3713 },
+  { id: 'SYO', name: '庄内', lat: 38.8122, lon: 139.7872 },
+  { id: 'TOY', name: '富山', lat: 36.6483, lon: 137.1875 },
+  { id: 'NTQ', name: '能登', lat: 37.293, lon: 136.9614 },
+  { id: 'HAC', name: '八丈島', lat: 33.115, lon: 139.785 },
+  { id: 'OKJ', name: '岡山', lat: 34.7569, lon: 133.8548 },
+  { id: 'IWK', name: '岩国', lat: 34.1439, lon: 132.2356 },
+  { id: 'UBJ', name: '山口宇部', lat: 33.93, lon: 131.2792 },
+  { id: 'TTJ', name: '鳥取', lat: 35.5306, lon: 134.167 },
+  { id: 'YGJ', name: '米子', lat: 35.4922, lon: 133.2364 },
+  { id: 'IWJ', name: '萩・石見', lat: 34.6764, lon: 131.79 },
+  { id: 'TSJ', name: '対馬', lat: 34.2849, lon: 129.3317 },
+  { id: 'FUJ', name: '福江', lat: 32.6663, lon: 128.8325 },
+  { id: 'SHM', name: '南紀白浜', lat: 33.6622, lon: 135.3583 },
+  { id: 'KUM', name: '屋久島', lat: 30.3866, lon: 130.6596 },
+  { id: 'OIM', name: '大島', lat: 34.7825, lon: 139.36 },
+  { id: 'KKX', name: '喜界島', lat: 28.3213, lon: 129.9278 },
+  { id: 'OES', name: '奥尻', lat: 42.0717, lon: 139.4325 },
 ]
 
 const routes = [
@@ -334,7 +334,26 @@ const JapanAirportMap = () => {
     const baseSize = 3
     const maxSize = 15
     const connections = airportConnections[airportId]
-    return baseSize + (connections / maxConnections) * (maxSize - baseSize)
+
+    const size =
+      baseSize + (connections / maxConnections) * (maxSize - baseSize)
+    // SVGの範囲を超えないようにサイズを調整
+
+    const lat = airports.find((a) => a.id === airportId)?.lat ?? 0
+    const lon = airports.find((a) => a.id === airportId)?.lon ?? 0
+    // SVGの範囲内に収まるようにサイズを調整するためのマージンを追加
+    const margin = 20 // マージン値は適宜調整
+    // 緯度経度をSVGの座標に変換
+    const x = longitudeToX(lon)
+    const y = latitudeToY(lat)
+    const adjustedSize = Math.min(
+      size,
+      x - margin,
+      y - margin,
+      500 - x - margin,
+      500 - y - margin
+    )
+    return Math.max(baseSize, adjustedSize)
   }
 
   const filteredRoutes = selectedAirport
@@ -351,7 +370,7 @@ const JapanAirportMap = () => {
         空港をクリックすると、その空港の路線が表示されます。ノードの大きさは接続数を表しています。
       </p>
       <div className="flex">
-        <svg width="500" height="500" viewBox="0 0 500 500">
+        <svg width="1000" height="1000" viewBox="0 0 1000 1000">
           {/* 空港 */}
           {airports.map((airport) => (
             <g
@@ -360,12 +379,18 @@ const JapanAirportMap = () => {
               style={{ cursor: 'pointer' }}
             >
               <circle
-                cx={airport.x}
-                cy={airport.y}
+                // 緯度経度を使用するように変更
+                cx={longitudeToX(airport.lon)}
+                cy={latitudeToY(airport.lat)}
                 r={getNodeSize(airport.id)}
                 fill={airport.id === selectedAirport ? 'blue' : 'red'}
               />
-              <text x={airport.x + 10} y={airport.y} fontSize="10">
+              <text
+                // 緯度経度を使用するように変更
+                x={longitudeToX(airport.lon) + 10}
+                y={latitudeToY(airport.lat)}
+                fontSize="10"
+              >
                 {airport.name}
               </text>
             </g>
@@ -379,10 +404,10 @@ const JapanAirportMap = () => {
             return (
               <line
                 key={index}
-                x1={from.x}
-                y1={from.y}
-                x2={to.x}
-                y2={to.y}
+                x1={longitudeToX(from.lon)}
+                y1={latitudeToY(from.lat)}
+                x2={longitudeToX(to.lon)}
+                y2={latitudeToY(to.lat)}
                 stroke={airlineColors[route.airline]}
                 strokeWidth="1"
                 opacity="0.7"
@@ -416,6 +441,16 @@ const JapanAirportMap = () => {
       </div>
     </div>
   )
+}
+
+function latitudeToY(lat: number): number {
+  // 日本の緯度に合わせて調整
+  return 1000 - (lat - 24) * (1000 / (45 - 24)) // 北が上になるように調整
+}
+
+function longitudeToX(lon: number): number {
+  // 日本の経度に合わせて調整
+  return (lon - 123) * (1000 / (153 - 123)) // 東が右になるように調整
 }
 
 export default JapanAirportMap
