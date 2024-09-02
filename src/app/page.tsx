@@ -30,6 +30,29 @@ const airports = [
   { id: 'KMJ', name: '熊本', x: 290, y: 360 },
   { id: 'MMY', name: '宮古', x: 260, y: 440 },
   { id: 'ISG', name: '石垣', x: 240, y: 460 },
+  { id: 'WAK', name: '稚内', x: 440, y: 50 },
+  { id: 'MBE', name: '紋別', x: 450, y: 80 },
+  { id: 'SHB', name: '中標津', x: 460, y: 100 },
+  { id: 'KUH', name: '釧路', x: 470, y: 120 },
+  { id: 'HKD', name: '函館', x: 480, y: 140 },
+  { id: 'ONJ', name: '大館能代', x: 490, y: 160 },
+  { id: 'SYO', name: '庄内', x: 500, y: 180 },
+  { id: 'TOY', name: '富山', x: 510, y: 200 },
+  { id: 'NTQ', name: '能登', x: 520, y: 220 },
+  { id: 'HAC', name: '八丈島', x: 530, y: 240 },
+  { id: 'OKJ', name: '岡山', x: 540, y: 260 },
+  { id: 'IWK', name: '岩国', x: 550, y: 280 },
+  { id: 'UBJ', name: '山口宇部', x: 560, y: 300 },
+  { id: 'TTJ', name: '鳥取', x: 570, y: 320 },
+  { id: 'YGJ', name: '米子', x: 580, y: 340 },
+  { id: 'IWJ', name: '萩・石見', x: 590, y: 360 },
+  { id: 'TSJ', name: '対馬', x: 600, y: 380 },
+  { id: 'FUJ', name: '福江', x: 610, y: 400 },
+  { id: 'SHM', name: '南紀白浜', x: 620, y: 420 },
+  { id: 'KUM', name: '屋久島', x: 630, y: 440 },
+  { id: 'OIM', name: '大島', x: 640, y: 460 },
+  { id: 'KKX', name: '喜界島', x: 650, y: 480 },
+  { id: 'OES', name: '奥尻', x: 660, y: 500 },
 ]
 
 const routes = [
@@ -105,8 +128,39 @@ const routes = [
   { from: 'KIX', to: 'OKA', airline: 'JAL' },
   { from: 'NGO', to: 'OKA', airline: 'JAL' },
 
-  // その他の航空会社のルート...
+  // ピーチアビエーション (Peach)
+  { from: 'KIX', to: 'CTS', airline: 'Peach' },
+  { from: 'KIX', to: 'FUK', airline: 'Peach' },
+  { from: 'KIX', to: 'OKA', airline: 'Peach' },
+  { from: 'NRT', to: 'CTS', airline: 'Peach' },
+  { from: 'NRT', to: 'FUK', airline: 'Peach' },
+  { from: 'NRT', to: 'OKA', airline: 'Peach' },
+
+  // スカイマーク (Skymark)
+  { from: 'HND', to: 'CTS', airline: 'Skymark' },
+  { from: 'HND', to: 'UKB', airline: 'Skymark' },
+  { from: 'HND', to: 'FUK', airline: 'Skymark' },
+  { from: 'HND', to: 'OKA', airline: 'Skymark' },
+
+  // スターフライヤー (StarFlyer)
+  { from: 'HND', to: 'KKJ', airline: 'StarFlyer' },
+  { from: 'HND', to: 'FUK', airline: 'StarFlyer' },
+
+  // ソラシドエア (Solaseed Air)
+  { from: 'HND', to: 'KMI', airline: 'Solaseed Air' },
+  { from: 'HND', to: 'KOJ', airline: 'Solaseed Air' },
+  { from: 'HND', to: 'OKA', airline: 'Solaseed Air' },
+
+  // AIRDO
+  { from: 'HND', to: 'CTS', airline: 'AIRDO' },
+  { from: 'HND', to: 'AKJ', airline: 'AIRDO' },
+
+  // IBEXエアラインズ
+  { from: 'SDJ', to: 'CTS', airline: 'IBEX' },
+  { from: 'SDJ', to: 'NGO', airline: 'IBEX' },
+  { from: 'SDJ', to: 'ITM', airline: 'IBEX' },
 ]
+
 const airlineColors: { [key: string]: string } = {
   ANA: '#00A1E9',
   JAL: '#DC0000',
