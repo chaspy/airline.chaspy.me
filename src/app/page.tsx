@@ -350,8 +350,8 @@ const JapanAirportMap = () => {
       size,
       x - margin,
       y - margin,
-      500 - x - margin,
-      500 - y - margin
+      1000 - x - margin,
+      1000 - y - margin
     )
     return Math.max(baseSize, adjustedSize)
   }
